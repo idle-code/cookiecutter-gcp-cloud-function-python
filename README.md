@@ -6,8 +6,8 @@
 - (Re)Deployment script
 
 ## Requirements
-- (Poetry)[https://python-poetry.org/docs/#installation]
-- (Google Cloud SDK (aka `gcloud` command))[https://cloud.google.com/sdk/docs/install]
+- [Poetry](https://python-poetry.org/docs/#installation)
+- [Google Cloud SDK (aka `gcloud` command)](https://cloud.google.com/sdk/docs/install)
 
 ## Usage
 ```console
