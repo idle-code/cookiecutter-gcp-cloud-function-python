@@ -1,0 +1,51 @@
+{
+  "project_name": "My GCP Cloud Function",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "gcp_project": "{{ cookiecutter.project_slug }}",
+  "gcp_function_region": [
+    "asia-east2",
+    "asia-northeast1",
+    "asia-northeast2",
+    "asia-northeast3",
+    "asia-south1",
+    "asia-southeast2",
+    "australia-southeast1",
+    "europe-west1",
+    "europe-west2",
+    "europe-west3",
+    "europe-west6",
+    "northamerica-northeast1",
+    "southamerica-east1",
+    "us-central1",
+    "us-east1",
+    "us-east4",
+    "us-west2",
+    "us-west3",
+    "us-west4"
+  ],
+  "gcp_cloud_function_name": "{{ cookiecutter.project_slug }}",
+  "code_entry_point": "on_request_received",
+  "memory": [
+    "128MB",
+    "256MB",
+    "512MB",
+    "1024MB",
+    "2048MB"
+  ],
+  "runtime": [
+    "python38",
+    "python37"
+  ],
+  "timeout": [
+    "1m",
+    "30s",
+    "2m",
+    "5m",
+    "9m"
+  ],
+  "allow_unauthenticated": [
+    "y",
+    "n"
+  ],
+  "author": "Pawel Zukowski <p.z.idlecode@gmail.com>"
+}
