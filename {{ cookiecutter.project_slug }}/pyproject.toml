@@ -2,10 +2,10 @@
 name = "{{ cookiecutter.project_slug }}"
 version = "0.1.0"
 description = "{{ cookiecutter.project_name }}"
-authors = ["{{ cookiecutter.author }}"]
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 flask = "^1.1.2"
 pydantic = "^1.6.1"
 pyyaml = "^5.3.1"

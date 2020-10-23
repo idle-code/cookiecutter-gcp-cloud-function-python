@@ -1,15 +1,20 @@
+# cookiecutter-gcp-cloud-function-python
 ## Features
 - Environment variables management by pydantic (support for `.env.yaml` file)
 - Project dependency management via Poetry (`pyproject.toml`)
 - Uses Flask development server for local testing
 - (Re)Deployment script
 
+## Requirements
+- (Poetry)[https://python-poetry.org/docs/#installation]
+- (Google Cloud SDK (aka `gcloud` command))[https://cloud.google.com/sdk/docs/install]
+
 ## Usage
 ```console
 $ cookiecutter gh:idle-code/cookiecutter-gcp-cloud-function-python
-project_name [My GCP Cloud Function]:
-project_slug [my_gcp_cloud_function]:
-gcp_project [my_gcp_cloud_function]: <Your Google project ID goes here>
+project_name [My GCP Cloud Function]: 
+project_slug [my_gcp_cloud_function]: 
+gcp_project []: # Your Google project ID goes here; if empty - your current gcloud configuration will define it
 Select gcp_function_region:
 1 - asia-east2
 2 - asia-northeast1
@@ -31,15 +36,15 @@ Select gcp_function_region:
 18 - us-west3
 19 - us-west4
 Choose from 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 [1]: 10
-gcp_cloud_function_name [my_gcp_cloud_function]: <This is how function will be named in GCP console>
-code_entry_point [on_request_received]: <This is python function name as seen in the source>
+gcp_cloud_function_name [my_gcp_cloud_function]: # This is how function will be named in GCP console
+code_entry_point [on_request_received]: # This is python function name as seen in the source
 Select memory:
 1 - 128MB
 2 - 256MB
 3 - 512MB
 4 - 1024MB
 5 - 2048MB
-Choose from 1, 2, 3, 4, 5 [1]:
+Choose from 1, 2, 3, 4, 5 [1]: 
 Select runtime:
 1 - python38
 2 - python37
@@ -50,12 +55,13 @@ Select timeout:
 3 - 2m
 4 - 5m
 5 - 9m
-Choose from 1, 2, 3, 4, 5 [1]:
+Choose from 1, 2, 3, 4, 5 [1]: 
 Select allow_unauthenticated:
 1 - y
 2 - n
-Choose from 1, 2 [1]:
-author [Pawel Zukowski <p.z.idlecode@gmail.com>]: <Your name goes here - it should be in "Name <mail>" format (as it will be used in pyproject.toml)>
+Choose from 1, 2 [1]: 
+full_name [Pawel Zukowski]: 
+email [p.z.idlecode@gmail.com]:
 ```
 
 ## Local testing
@@ -75,4 +81,4 @@ $ ./main.py
 ```
 
 ## Deployment
-You can use generated `deploy.sh` script but double check it to see if it's valid for your use-case!
+You can use generated `deploy.sh` script but double check it for your use case!

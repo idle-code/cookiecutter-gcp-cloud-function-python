@@ -1,7 +1,7 @@
 {
   "project_name": "My GCP Cloud Function",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "gcp_project": "{{ cookiecutter.project_slug }}",
+  "gcp_project": "",
   "gcp_function_region": [
     "asia-east2",
     "asia-northeast1",
@@ -37,8 +37,9 @@
     "python37"
   ],
   "timeout": [
-    "1m",
+    "",
     "30s",
+    "1m",
     "2m",
     "5m",
     "9m"
@@ -47,5 +48,6 @@
     "y",
     "n"
   ],
-  "author": "Pawel Zukowski <p.z.idlecode@gmail.com>"
+  "full_name": null,
+  "email": null
 }
