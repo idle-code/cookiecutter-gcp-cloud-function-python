@@ -23,7 +23,7 @@ gcloud functions deploy \
   --entry-point={{ cookiecutter.code_entry_point }} \
   --runtime={{ cookiecutter.runtime }} \
   --memory={{ cookiecutter.memory }} \
-  {%- if cookiecutter.timeout %}
+  {%- if not cookiecutter.timeout.startswith("default") %}
   --timeout={{ cookiecutter.timeout }} \
   {%- endif %}
   --env-vars-file=$ENV_YAML_FILE \

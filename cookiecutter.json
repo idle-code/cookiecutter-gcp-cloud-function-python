@@ -37,7 +37,7 @@
     "python37"
   ],
   "timeout": [
-    "",
+    "default (1m)",
     "30s",
     "1m",
     "2m",
