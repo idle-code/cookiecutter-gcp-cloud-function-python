@@ -37,7 +37,7 @@ Select gcp_function_region:
 19 - us-west4
 Choose from 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 [1]: 10
 gcp_cloud_function_name [my_gcp_cloud_function]: # This is how function will be named in GCP console
-code_entry_point [on_request_received]: # This is python function name as seen in the source
+code_entry_point [on_request_received]:  # This is python function name as seen in the source
 Select memory:
 1 - 128MB
 2 - 256MB
@@ -50,18 +50,19 @@ Select runtime:
 2 - python37
 Choose from 1, 2 [1]: 
 Select timeout:
-1 - 1m
+1 - default (1m)
 2 - 30s
-3 - 2m
-4 - 5m
-5 - 9m
-Choose from 1, 2, 3, 4, 5 [1]: 
+3 - 1m
+4 - 2m
+5 - 5m
+6 - 9m
+Choose from 1, 2, 3, 4, 5, 6 [1]: 
 Select allow_unauthenticated:
 1 - y
 2 - n
 Choose from 1, 2 [1]: 
-full_name [Pawel Zukowski]: 
-email [p.z.idlecode@gmail.com]:
+full_name: Pawel Zukowski
+email: p.z.idlecode@gmail.com
 ```
 
 ## Local testing
