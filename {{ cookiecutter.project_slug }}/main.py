@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+from typing import Callable
+
 import yaml
-from flask import Flask, Request, render_template, request
+from flask import Flask, Request, request
 from pydantic import BaseSettings
 
 
@@ -9,11 +10,11 @@ class CloudFunctionSettings(BaseSettings):
     DEBUG: bool = False
 
 
-def {{ cookiecutter.code_entry_point }}(req: Request):
-    return render_template("index.html")
+def {{ cookiecutter.code_entry_point }}(req: Request) -> str:
+    return "ok"
 
 
-def serve_flask_endpoint(endpoint):
+def serve_flask_endpoint(endpoint: Callable) -> None:
     app = Flask(__name__)
     app.debug = True
     app.route("/")(lambda: endpoint(request))
@@ -33,7 +34,6 @@ def load_settings_from_yaml(yaml_path: str) -> CloudFunctionSettings:
 if __name__ == "__main__":
     # TODO: check arguments to see if `.env.yaml.template` should be generated
     settings = load_settings_from_yaml(".env.yaml")
-    serve_flask_endpoint(on_request_received)
+    serve_flask_endpoint({{ cookiecutter.code_entry_point }})
 else:
     settings = load_settings_from_environment()
-

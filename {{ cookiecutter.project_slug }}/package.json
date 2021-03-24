@@ -1,0 +1,22 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "1.0.0",
+  "devDependencies": {
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  },
+  "lint-staged": {
+    "*.py": [
+      "pipenv run isort --atomic",
+      "pipenv run black",
+      "pipenv run flake8",
+      "pipenv run mypy",
+      "git add"
+    ]
+  }
+}

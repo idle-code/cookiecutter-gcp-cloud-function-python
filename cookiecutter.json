@@ -3,8 +3,8 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "gcp_project": "",
   "gcp_function_region": [
-    "asia-east2",
     "asia-northeast1",
+    "asia-east2",
     "asia-northeast2",
     "asia-northeast3",
     "asia-south1",
@@ -49,5 +49,13 @@
     "n"
   ],
   "full_name": null,
-  "email": null
+  "email": null,
+  "python_version": [
+    "3.8",
+    "3.7"
+  ],
+  "black_target": [
+    "py38",
+    "py37"
+  ]
 }

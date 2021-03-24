@@ -1,0 +1,52 @@
+steps:
+- name: python:{{ cookiecutter.python_version }}-slim
+  id: build
+  entrypoint: bash
+  args:
+  - -c
+  - |
+    set -ex
+    apt update && apt install -y curl
+
+    pip3 install pipenv
+    pipenv install --dev --system --deploy
+
+    black --check .
+    mypy .
+    flake8
+
+    pytest --cov=main --cov-fail-under=100 tests
+
+    pipenv lock -r > requirements.txt
+
+- name: gcr.io/cloud-builders/gcloud
+  id: deploy
+  waitFor:
+  - build
+  entrypoint: bash
+  args:
+  - -c
+  - |
+    set -ex
+
+    if [[ "$BRANCH_NAME" =~ ^(main) ]]; then
+      gcloud functions deploy {{ cookiecutter.gcp_cloud_function_name }} \
+        --region=asia-northeast1 \
+        {%- if cookiecutter.gcp_project %}
+        --project {{ cookiecutter.gcp_project }} \
+        {%- endif %}
+        --region {{ cookiecutter.gcp_function_region }} \
+        --entry-point={{ cookiecutter.code_entry_point }} \
+        --runtime={{ cookiecutter.runtime }} \
+        --memory={{ cookiecutter.memory }} \
+        {%- if not cookiecutter.timeout.startswith("default") %}
+        --timeout={{ cookiecutter.timeout }} \
+        {%- endif %}
+        --env-vars-file=$ENV_YAML_FILE \
+        {%- if cookiecutter.allow_unauthenticated == "y" %}
+        --allow-unauthenticated \
+        {%- endif %}
+        --trigger-http
+    else
+      exit 0
+    fi

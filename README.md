@@ -1,12 +1,12 @@
 # cookiecutter-gcp-cloud-function-python
 ## Features
 - Environment variables management by pydantic (support for `.env.yaml` file)
-- Project dependency management via Poetry (`pyproject.toml`)
+- Project dependency management via pipenv (`Pipfile`)
 - Uses Flask development server for local testing
 - (Re)Deployment script
 
 ## Requirements
-- [Poetry](https://python-poetry.org/docs/#installation)
+- [pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today)
 - [Google Cloud SDK (aka `gcloud` command)](https://cloud.google.com/sdk/docs/install)
 
 ## Usage
@@ -16,8 +16,8 @@ project_name [My GCP Cloud Function]:
 project_slug [my_gcp_cloud_function]: 
 gcp_project []: # Your Google project ID goes here; if empty - your current gcloud configuration will define it
 Select gcp_function_region:
-1 - asia-east2
-2 - asia-northeast1
+1 - asia-northeast1
+2 - asia-east2
 3 - asia-northeast2
 4 - asia-northeast3
 5 - asia-south1
@@ -68,9 +68,9 @@ email: p.z.idlecode@gmail.com
 ## Local testing
 Enter created directory and execute:
 ```console
-$ poetry shell
-$ poetry install
-$ ./main.py
+$ pipenv shell
+$ pipenv install -d
+$ python main.py
  * Serving Flask app "main" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
@@ -80,6 +80,3 @@ $ ./main.py
  * Restarting with stat
  * Debugger is active!
 ```
-
-## Deployment
-You can use generated `deploy.sh` script but double check it for your use case!
