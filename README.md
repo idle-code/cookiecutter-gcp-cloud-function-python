@@ -23,19 +23,20 @@ Select gcp_function_region:
 5 - asia-south1
 6 - asia-southeast2
 7 - australia-southeast1
-8 - europe-west1
-9 - europe-west2
-10 - europe-west3
-11 - europe-west6
-12 - northamerica-northeast1
-13 - southamerica-east1
-14 - us-central1
-15 - us-east1
-16 - us-east4
-17 - us-west2
-18 - us-west3
-19 - us-west4
-Choose from 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 [1]: 10
+8 - europe-central2
+9 - europe-west1
+10 - europe-west2
+11 - europe-west3
+12 - europe-west6
+13 - northamerica-northeast1
+14 - southamerica-east1
+15 - us-central1
+16 - us-east1
+17 - us-east4
+18 - us-west2
+19 - us-west3
+20 - us-west4
+Choose from 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 [1]:
 gcp_cloud_function_name [my_gcp_cloud_function]: # This is how function will be named in GCP console
 code_entry_point [on_request_received]:  # This is python function name as seen in the source
 Select memory:
@@ -44,7 +45,10 @@ Select memory:
 3 - 512MB
 4 - 1024MB
 5 - 2048MB
-Choose from 1, 2, 3, 4, 5 [1]: 
+6 - 4096MB
+7 - 8192MB
+Choose from 1, 2, 3, 4, 5, 6, 7 [1]:
+max_auto_scaling_instances [0]:
 Select runtime:
 1 - python38
 2 - python37
@@ -63,13 +67,15 @@ Select allow_unauthenticated:
 Choose from 1, 2 [1]: 
 full_name: Pawel Zukowski
 email: p.z.idlecode@gmail.com
+$ poetry shell
+$ poetry update
 ```
 
 ## Local testing
 Enter created directory and execute:
 ```console
 $ poetry shell
-$ poetry install
+$ poetry update
 $ ./main.py
  * Serving Flask app "main" (lazy loading)
  * Environment: production
