@@ -10,6 +10,7 @@
     "asia-south1",
     "asia-southeast2",
     "australia-southeast1",
+    "europe-central2",
     "europe-west1",
     "europe-west2",
     "europe-west3",
@@ -30,9 +31,13 @@
     "256MB",
     "512MB",
     "1024MB",
-    "2048MB"
+    "2048MB",
+    "4096MB",
+    "8192MB"
   ],
+  "max_auto_scaling_instances": 0,
   "runtime": [
+    "python39",
     "python38",
     "python37"
   ],

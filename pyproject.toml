@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-gcp-cloud-function-python"
-version = "0.1.0"
+version = "0.1.1"
 description = "Cookiecutter template for creating Google Cloud Function with Python runtime"
 authors = ["Pawel Zukowski <p.z.idlecode@gmail.com>"]
 
