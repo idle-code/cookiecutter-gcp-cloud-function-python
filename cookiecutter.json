@@ -3,11 +3,13 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "gcp_project": "",
   "gcp_function_region": [
+    "asia-east1",
     "asia-east2",
     "asia-northeast1",
     "asia-northeast2",
     "asia-northeast3",
     "asia-south1",
+    "asia-southeast1",
     "asia-southeast2",
     "australia-southeast1",
     "europe-central2",
