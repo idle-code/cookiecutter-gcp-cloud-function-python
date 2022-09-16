@@ -1,6 +1,6 @@
 {
   "project_name": "My GCP Cloud Function",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace('-', '_').replace('.', '').replace(' ', '_') }}",
   "gcp_project": "",
   "gcp_function_region": [
     "asia-east1",
@@ -22,6 +22,7 @@
     "us-central1",
     "us-east1",
     "us-east4",
+    "us-west1",
     "us-west2",
     "us-west3",
     "us-west4"
@@ -37,8 +38,10 @@
     "4096MB",
     "8192MB"
   ],
-  "max_auto_scaling_instances": 0,
+  "min_auto_scaling_instances": 0,
+  "max_auto_scaling_instances": 3000,
   "runtime": [
+    "python310",
     "python39",
     "python38",
     "python37"
@@ -55,6 +58,6 @@
     "y",
     "n"
   ],
-  "full_name": null,
-  "email": null
+  "author_full_name": null,
+  "author_email": null
 }

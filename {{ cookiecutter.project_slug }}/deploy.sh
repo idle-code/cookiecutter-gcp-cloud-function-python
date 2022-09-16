@@ -3,7 +3,7 @@
 # Generate requirements.txt file
 echo "Generating requirements.txt..."
 poetry install --no-interaction 
-poetry export --no-interaction --format requirements.txt --output requirements.txt
+poetry export --no-interaction --without-hashes --format requirements.txt --output requirements.txt
 
 # Check existence of file with environment variables
 ENV_YAML_FILE=".env.yaml"
