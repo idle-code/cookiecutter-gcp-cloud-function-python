@@ -57,9 +57,10 @@ min_auto_scaling_instances [0]:
 max_auto_scaling_instances [3000]:
 Select runtime:
 1 - python310
-2 - python39
-3 - python38
-4 - python37
+2 - python311
+3 - python312
+4 - python313
+5 - python314
 Choose from 1, 2, 3, 4 [1]: 
 Select timeout:
 1 - default (1m)

@@ -42,9 +42,10 @@
   "max_auto_scaling_instances": 3000,
   "runtime": [
     "python310",
-    "python39",
-    "python38",
-    "python37"
+    "python311",
+    "python312",
+    "python313",
+    "python314"
   ],
   "timeout": [
     "default (1m)",
